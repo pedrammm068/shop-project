@@ -1,15 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa-IR" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Parsi</title>
     <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./output.css">
-    <script type="module" src="main.js" defer></script>
+    <script src="main.js" defer></script>
     <script type="module" src="services.js"></script>
 </head>
+
 <body>
-    
+
+    <header class="bg-white">
+       
+ <div class="container px-4 py-4 flex justify-between items-center">
+
+            <div class="menu">
+              <a href="#"> <svg onclick="menubaz()" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a> 
+
+            </div>
+
+
+
+            <h1 class="text-xl font-extrabold">Parsi</h1>
+
+            <div class="relative group ">
+
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24"
+                        fill="none">
+                        <path
+                            d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></a>
+
+                <div
+                    class="  group-hover:block hidden login-user left-3 w-60 bg-white shadow-2xl max-w-64 rounded-xl top-full p-6 absolute">
+
+                    <a href="#"
+                        class="bg-black w-full text-white p-2  text-center block rounded-xl hover:bg-green-400 hover:text-black">ورود</a>
+
+                </div>
+
+            </div>
+
+
+            <div class=" !hidden menum fixed right-0 top-0 h-screen w-full bg-white px-4 py-4">
+
+                <div class="relative">
+
+                    <a href="#"><svg onclick="menubaz()" class="absolute border-4 rounded-full bg-slate-500 hover:bg-black hover:border "
+                            xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24"
+                            fill="none">
+                            <rect width="24" height="24" fill="white" />
+                            <path d="M7 17L16.8995 7.10051" stroke="#000000" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+
+
+                    <span class=" block text-center text-xl font-extrabold">Parsi</span>
+
+                </div>
+
+                <input name="dn" id="dn" type="search" class="w-full bg-white p-2 border mt-6 rounded"
+                    placeholder="دنبال چی هستی؟">
+
+                <ul class="p-2 ">
+                    <li class="mb-2 font-bold text-xl">خانه</li>
+                    <a class="flex items-center justify-between " href="">
+                        <li class="mb-2 font-bold text-xl  ">ویژگی‌ها</li> <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
+                          </svg>
+                    </a>
+                    <a class="flex items-center justify-between "  href="">
+                        <li class="mb-2 font-bold text-xl">محصولات</li> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
+                          </svg>
+                    </a>
+                    <a class="flex items-center justify-between " href="">
+                        <li class="mb-2 font-bold text-xl">وبلاگ</li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
+                          </svg>
+                   
+                    </a>
+                    <a class="flex items-center justify-between " href="">
+                        <li class="mb-2 font-bold text-xl">صفحه‌ها</li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
+                          </svg>
+                   
+                    </a>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="animateion bg-black text-white flex overflow-y-auto py-4 gap-6 ">
+            <span class="shrink-0">ارسال رایگان برای تمامی سفارشات بالای 50 هزار تومان</span>
+            <span class="shrink-0">%10 تخفیف برای تمام وسایل مورد نیاز تابستان!</span>
+            <span class="shrink-0">%10 تخفیف برای اقلام انتخابی دریافت کنید</span>
+            <span class="shrink-0">مشتریان جدید با کد {GET10} %10 صرفه جویی می کنند</span>
+            <span class="shrink-0">ارسال رایگان برای تمامی سفارشات بالای 50 هزار تومان</span>
+            <span class="shrink-0">%10 تخفیف برای تمام وسایل مورد نیاز تابستان!</span>
+            <span class="shrink-0">%10 تخفیف برای اقلام انتخابی دریافت کنید</span>
+            <span class="shrink-0">مشتریان جدید با کد {GET10} %10 صرفه جویی می کنند</span>
+            <span class="shrink-0">ارسال رایگان برای تمامی سفارشات بالای 50 هزار تومان</span>
+            <span class="shrink-0">%10 تخفیف برای تمام وسایل مورد نیاز تابستان!</span>
+            <span class="shrink-0">%10 تخفیف برای اقلام انتخابی دریافت کنید</span>
+            <span class="shrink-0">مشتریان جدید با کد {GET10} %10 صرفه جویی می کنند</span>
+        </div>
+    </header>
+
 </body>
+
 </html>
