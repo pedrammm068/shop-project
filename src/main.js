@@ -14,10 +14,10 @@ async function getproductLimit(net = 4) {
 }
 
 
-async function takProduct(){
-    return await fetch(`https://fakestoreapi.com/products/1`)
+async function takProduct(id){
+    return await fetch(`https://fakestoreapi.com/products/${id}`)
     .then(js => js.json())
-    .then(json => console.log(json))
+    .then(json => json)
     .catch(error => console.log(error))
 }
 
@@ -213,44 +213,48 @@ history.pushState({} , "" ,`${link}`)
 Allcheck()
 }
 
-function renderSingleProduct({ description, price, image, title ,}) {
-
-const temp =  `
- <div class="container-tak w-full  h-40">
-        <div class="bg-slate-200 p-8 pt-3 border "> 
-            <ul class="flex gap-4 ">
-                <li>خانه</li>
-                <li>فروشگاه</li>
-                <li>تی‌شرت</li>
-                <li>${title}</li>
-            </ul>
+async function renderSingleProduct() {
+    AnimationHead.classList.add("hidden")
+    const { description, price, image, title} = await takProduct(Number(location.pathname.split("/").at(-1)))
+        const temp = `
+                     <div class="container-tak w-full  h-40">
+                <div class="bg-slate-200 p-8 pt-3 border "> 
+                    <ul class="flex gap-4 ">
+                        <li>خانه</li>
+                        <li>فروشگاه</li>
+                        <li>تی‌شرت</li>
+                        <li>${title}</li>
+                    </ul>
+                </div>
+        
+                <div class=" p-6">
+                    <div class="border rounded-s-lg  ">
+        <img class="object-contain" src="${image}" alt="">
         </div>
+        <div class="flex w-full gap-4 p-4">
+            <div class="border">
+            <img class="w-32" src="${image}" alt="">
+        </div>
+        <div class="border">    
+        <img class="w-32" src="${image}" alt="">
+        </div>
+        </div>
+        
+        <div class="mb-2">
+            <span>نام محصول: ${title}</span>
+            <p>قیمت: ${price}</p>
+            <p>توضیحات: ${description}</p>
+        </div>
+        <div class="border"></div>
+        
+          </div>
+            </div>
+                    
+                `
 
-        <div class=" p-6">
-            <div class="border rounded-md ">
-<img src="${image}" alt="">
-</div>
-<div class="flex w-full gap-4 p-4">
-    <div class="border">
-    <img class="w-32" src="./asstes/imges/Model 2.webp" alt="">
-</div>
-<div class="border">    
-<img class="w-32" src="./asstes/imges/Model 3.webp" alt="">
-</div>
-</div>
+    root.innerHTML = temp
 
-<div class="mb-2">
-    <span>${title}</span>
-    <p>${price}</p>
-    <p>${description}</p>
-</div>
-<div class="border"></div>
 
-  </div>
-    </div>
-
-`
-return temp
 }
 
 function menubaz() {
