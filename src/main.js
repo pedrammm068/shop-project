@@ -26,6 +26,8 @@ const baz = document.querySelector(".menum")
 const AnimationHead = document.querySelector(".animateion")
 let Slide;
 const root = document.getElementById("root")
+const Srcimge = document.getElementById("Srcimge")
+const bord = document.querySelector(".asali-border")
 let net = 0
 let Slinterval
 
@@ -226,20 +228,23 @@ async function renderSingleProduct() {
                         <li>${title}</li>
                     </ul>
                 </div>
-        
-                <div class=" p-6">
-                    <div class="border rounded-s-lg  ">
+      
+                <div class=" p-6 md:flex md:gap-4">
+                  <div class="md:flex md:flex-row-reverse md:w-full md:max-w-[347px]">
+                    <div class="border overflow-hidden rounded-xl md:max-w-[44rem] ">
         <img class="object-contain" src="${image}" alt="">
         </div>
-        <div class="flex w-full gap-4 p-4">
+        <div class="flex w-full gap-4 p-4 md:grid">
             <div class="border">
-            <img class="w-32" src="${image}" alt="">
+            <img class="w-32 md:max-w-24 asali-border" src="${image}" alt="">
         </div>
         <div class="border">    
-        <img class="w-32" src="${image}" alt="">
+        <img  class="w-32 md:max-w-24" src="${image}" alt="">
         </div>
         </div>
         
+</div>
+
         <div class="mb-2">
             <span>نام محصول: ${title}</span>
             <p>قیمت: ${price}</p>
