@@ -1,3 +1,15 @@
 body {
 font-family: Arial, Helvetica, sans-serif;
 }
+.animateion::-webkit-scrollbar {
+    display: none;
+}
+.asali-border {
+    border: 2px solid black;
+    
+}
+@media (max-width: 780px){
+.mees{
+    display: none;
+}
+}
