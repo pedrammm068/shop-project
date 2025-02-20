@@ -9,26 +9,47 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./output.css">
     <script src="main.js" defer></script>
-    <script type="module" src="services.js"></script>
 </head>
 
-<body>
+<body class=" ">
+    <div class="md:w-full md:grid md:justify-center md:items-center">
+<div class="md:grid md:justify-center md:items-center md:w-full md:max-w-[1380px]">
+       <header class="bg-white">
 
-    <header class="bg-white">
-       
- <div class="container px-4 py-4 flex justify-between items-center">
+<div class="md-medmd:w-full md:h-6 md:p-6 md:border md:flex md:items-center md:justify-between">
+ <div class=" md:flex md:items-center ">
+    <ul class="mees md:flex md:items-center md:gap-5 ">
+    <li class="">تماس با ما</li>
+    <li>درباره ما</li>
+    <li>محل فروشگاه</li>
+    <li>راهنمایی</li>
+</ul>
+</div>
 
-            <div class="menu">
-              <a href="#"> <svg onclick="menubaz()" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg></a> 
+<div class="mees ">
+<ul class="mees flex gap-5">
+    <li class="">#</li>
+    <li>&</li>
+    <li>*</li>
+    <li>@</li>
+    <li>%</li>
+</ul>
+</div>
+</div>
+
+        <div class="container px-4 py-4 flex justify-between items-center">
+            <div class="menu ">
+                <a class="md:hidden " href="#"> <svg onclick="menubaz()" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px"
+                        viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg></a>
 
             </div>
 
 
 
-            <h1 class="text-xl font-extrabold">Parsi</h1>
+            <h1 class="text-2xl font-extrabold">Parsi</h1>
 
             <div class="relative group ">
 
@@ -40,21 +61,22 @@
                     </svg></a>
 
                 <div
-                    class="  group-hover:block hidden login-user left-3 w-60 bg-white shadow-2xl max-w-64 rounded-xl top-full p-6 absolute">
+                    class=" z-[1000]    group-hover:block hidden login-user left-3 w-60 bg-white shadow-2xl max-w-64 rounded-xl top-full p-6 absolute">
 
                     <a href="#"
-                        class="bg-black w-full text-white p-2  text-center block rounded-xl hover:bg-green-400 hover:text-black">ورود</a>
+                        class="bg-black w-full text-white p-2 duration-1000 text-center block rounded-xl  hover:bg-green-400 hover:text-black">ورود</a>
 
                 </div>
 
             </div>
 
 
-            <div class=" !hidden menum fixed right-0 top-0 h-screen w-full bg-white px-4 py-4">
+            <div class="!hidden  menum fixed right-0 top-0 h-screen w-full bg-white px-4 py-4 z-[100]">
 
-                <div class="relative">
+                <div class="relative ">
 
-                    <a href="#"><svg onclick="menubaz()" class="absolute border-4 rounded-full bg-slate-500 hover:bg-black hover:border "
+                    <a href="#"><svg onclick="menubaz()"
+                            class=" absolute border-4 rounded-full bg-slate-500 hover:bg-black hover:border "
                             xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 24 24"
                             fill="none">
                             <rect width="24" height="24" fill="white" />
@@ -75,29 +97,34 @@
                 <ul class="p-2 ">
                     <li class="mb-2 font-bold text-xl">خانه</li>
                     <a class="flex items-center justify-between " href="">
-                        <li class="mb-2 font-bold text-xl  ">ویژگی‌ها</li> <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
-                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
-                          </svg>
+                        <li class="mb-2 font-bold text-xl  ">ویژگی‌ها</li> <svg xmlns="http://www.w3.org/2000/svg"
+                            width="20px" height="20px" viewBox="0 0 24 24">
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22"
+                                transform="matrix(-1 0 0 1 24 0)" />
+                        </svg>
                     </a>
-                    <a class="flex items-center justify-between "  href="">
-                        <li class="mb-2 font-bold text-xl">محصولات</li> 
+                    <a class="flex items-center justify-between " href="">
+                        <li class="mb-2 font-bold text-xl">محصولات</li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
-                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
-                          </svg>
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22"
+                                transform="matrix(-1 0 0 1 24 0)" />
+                        </svg>
                     </a>
                     <a class="flex items-center justify-between " href="">
                         <li class="mb-2 font-bold text-xl">وبلاگ</li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
-                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
-                          </svg>
-                   
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22"
+                                transform="matrix(-1 0 0 1 24 0)" />
+                        </svg>
+
                     </a>
                     <a class="flex items-center justify-between " href="">
                         <li class="mb-2 font-bold text-xl">صفحه‌ها</li>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
-                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
-                          </svg>
-                   
+                            <polyline fill="none" stroke="#000000" stroke-width="2" points="7 2 17 12 7 22"
+                                transform="matrix(-1 0 0 1 24 0)" />
+                        </svg>
+
                     </a>
                 </ul>
 
@@ -122,6 +149,13 @@
         </div>
     </header>
 
+   
+    <div id="root" class="w-full">
+    
+    </div>
+    
+</div>
+</div>
 </body>
 
 </html>
