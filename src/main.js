@@ -33,12 +33,13 @@ const baz = document.querySelector(".menum")
 const AnimationHead = document.querySelector(".animateion")
 let Slidei;
 const root = document.getElementById("root")
-const Srcimge = document.getElementById("Srcimge")
 const bord = document.querySelector(".asali-border")
 let net = 0
 let Slinterval
 let Cart = JSON.parse(localStorage.getItem("cart")) ?? []
 let Fave = JSON.parse(localStorage.getItem("favorites")) ?? []
+let logInUser = localStorage.getItem("logInUser") || null
+
 
 
 const arry = [
@@ -303,14 +304,24 @@ const tepm = date.map(item => {
     `
 }
 ).join("")
+const camplo = logInUser ? `
+        <a href="#" onclick="camplo(event)" class="bg-blue-500 w-full max-w-44 text-white p-2 rounded-lg">تکمیل خرید</a>` : ""
 root.innerHTML = `
 <div class="">
 <div class="p-2 text-center">
      <span>جمع کل: ${Allprice.toFixed(2)}$</span>
+     ${camplo}
  </div>
        <div class="md:grid md:grid-cols-4 md:gap-6">${tepm}</div>
      </div>
 `
+}
+
+function camplo (evt) {
+evt.preventDefault()
+Cart = []
+localStorage.setItem("cart" , JSON.stringify(Cart))
+RenderCart()
 }
 function removfromCarts (evt , vid) {
     evt.preventDefault()
@@ -375,6 +386,55 @@ localStorage.setItem("cart" , JSON.stringify(Cart))
         productFor()   
     }
 }
+
+function renderLogin () {
+    const login = document.querySelector(".login-user")
+    if(logInUser) {
+        login.innerHTML = `
+        <p class="text-center p-2">ایمیل: ${logInUser}</p>
+            <a  class="bg-red-500 w-full duration-1000 hover:bg-black text-white p-2 text-center block rounded-xl" href="#" onclick="logout(event)">خروج</a>
+        
+        `
+    } else {
+        login.innerHTML = `
+            <p class="text-center p-2">وارد نشده‌اید</p>
+            <a class="bg-black w-full text-white p-2 duration-1000 text-center block rounded-xl  hover:bg-green-400 hover:text-black"  href="#" onclick="handelOfClick(event, 'login')" >ورود</a>
+        `
+    }
+}
+function renderlogPage() {
+    root.innerHTML = `
+    <div class="w-full max-w-md mx-auto p-6 bg-white shadow-2xl rounded-xl mt-15">
+            <h2 class="text-lg font-bold text-center mb-4">ورود</h2>
+            <form class="flex flex-col gap-4" id="loginform" >
+                <input class="p-2 border rounded-sm" required type="email" id="emailinput" placeholder="ایمیل" >
+                <input class="p-2 border rounded-sm" type="password" id="passwordinput" placeholder="رمز" required> 
+                <button type="submit" class="bg-green-500 w-full text-white p-2 rounded-xl hover:bg-white text-black">ثبت</button> 
+            </form>
+        </div>
+    `
+    const Form = document.getElementById("loginform")
+    Form.addEventListener("submit" , handelLog)
+}
+function handelLog (evt) {
+    evt.preventDefault()
+    const email = document.getElementById("emailinput").value
+    const pass = document.getElementById("passwordinput").value
+if(email.includes("@")){
+    logInUser = email
+    localStorage.setItem("logInUser" , email)
+    productFor()
+    renderLogin()
+}
+}
+function logout(evt) {
+evt.preventDefault()
+logInUser = null
+localStorage.removeItem("logInUser")
+productFor()
+renderLogin()
+}
+
 async function productFor() {
     const res = await getproductLimit(4)
 
@@ -616,25 +676,36 @@ function Allcheck() {
                 case (location.pathname.match(/[/]src[/]product[/][0-9]{1,}/) !== null):
                     renderSingleProduct();
                     break
-        case Addres === "cart" :
+        case Addres ===  "cart" :
        RenderCart() 
         break
         case Addres === "jewelry" : 
         RenderCategory("jewelery")
         break
 
-        case Addres === "women" : 
+        case Addres ===  "women" : 
         RenderCategory("women's clothing")
         break
-        case Addres === "men" : 
+        case Addres ===  "men" : 
         RenderCategory("men's clothing")
         break
-        case Addres === "favorites" : 
+        case Addres ===  "favorites" : 
         renderFavorites()
         break
-        
+        case Addres === "login" : 
+        renderlogPage()
+        break
+        case Addres === "" || Addres === undefined :
+productFor()
+        break
                     default:
+                        productFor()
             break;
     }
+    renderLogin()
 }
-window.addEventListener("popstate" , Allcheck)
+function initPage() { 
+    Allcheck()
+    renderLogin() }
+    initPage()
+window.addEventListener("popstate", Allcheck)
